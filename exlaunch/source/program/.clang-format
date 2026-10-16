@@ -1,0 +1,3 @@
+BasedOnStyle: InheritParentConfig
+Macros:
+  - "HOOK_DEFINE_TRAMPOLINE(name)=struct name : public TrampolineHook<name>"

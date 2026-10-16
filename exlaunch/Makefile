@@ -43,3 +43,10 @@ include $(MK_PATH)/$(MK_NAME)
 include $(MK_PATH)/common.mk
 include $(MK_PATH)/deploy.mk
 include $(MK_PATH)/npdm.mk
+
+FORMAT_SRCS = $(filter-out $(addprefix source/program/,loggers.hpp offsets.hpp setting.hpp version.hpp), \
+	$(wildcard source/program/*.cpp source/program/*.hpp))
+
+.PHONY: format
+format:
+	clang-format -i $(FORMAT_SRCS)

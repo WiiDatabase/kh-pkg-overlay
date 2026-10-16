@@ -34,10 +34,12 @@ namespace nn::fs {
     /* Information about an entry within a directory. */
     struct DirectoryEntry {
         char m_Name[MaxDirectoryEntryNameSize + 1];
-        OpenDirectoryMode m_Type;
-        u32 field_304;
+        u8 m_Reserved[3];
+        s8 m_Type;
+        u8 m_Reserved2[3];
         long m_FileSize;
     };
+    static_assert(offsetof(DirectoryEntry, m_Type) == 0x304 && sizeof(DirectoryEntry) == 0x310);
     
     /* Mode for opening files. */
     enum OpenMode {
