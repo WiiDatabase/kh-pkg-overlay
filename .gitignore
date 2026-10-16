@@ -1,0 +1,6 @@
+exlaunch/build/
+exlaunch/deploy/
+exlaunch/*.elf
+exlaunch/*.nso
+exlaunch/*.npdm
+.DS_Store
